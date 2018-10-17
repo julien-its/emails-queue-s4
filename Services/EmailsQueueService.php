@@ -5,6 +5,7 @@ use JulienIts\EmailsQueueBundle\Entity\EmailQueue;
 use JulienIts\EmailsQueueBundle\Entity\EmailSent;
 use Doctrine\ORM\EntityManagerInterface;
 
+
 class EmailsQueueService
 {
     //const WHITE_LIST_ENABLE = false;
@@ -30,7 +31,7 @@ class EmailsQueueService
     
     private function _sendEmailQueue(EmailQueue $emailQueue)
     {
-        $message = new Swift_Message();
+        $message = new \Swift_Message();
 		 
         $to = $emailQueue->getEmailTo();
         
