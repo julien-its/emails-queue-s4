@@ -3,6 +3,7 @@
 namespace JulienIts\EmailsQueueBundle\Services;
 
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
+use Doctrine\ORM\EntityManagerInterface;
 
 class EmailService
 {
@@ -14,11 +15,11 @@ class EmailService
     protected $emailsQueueService;
 
     public function __construct(
-		\Doctrine\ORM\EntityManager $em,
+        EntityManagerInterface $em,
 		\Symfony\Bundle\FrameworkBundle\Routing\Router $router,
 		\Twig_Environment $twig,
 		TokenStorage $tokenStorage,
-        \JulienIts\EmailsQueueBundle\Services\EmailsQueueService $emailsQueueService
+        EmailsQueueService $emailsQueueService
 	)
     {
         $this->em = $em;

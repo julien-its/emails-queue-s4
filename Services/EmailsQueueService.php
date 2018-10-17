@@ -3,6 +3,7 @@ namespace JulienIts\EmailsQueueBundle\Services;
 
 use JulienIts\EmailsQueueBundle\Entity\EmailQueue;
 use JulienIts\EmailsQueueBundle\Entity\EmailSent;
+use Doctrine\ORM\EntityManagerInterface;
 
 class EmailsQueueService
 {
@@ -11,7 +12,7 @@ class EmailsQueueService
 	protected $mailer;
 	protected $appMode;
     
-    public function __construct(\Doctrine\ORM\EntityManager $em, \Swift_Mailer $mailer)
+    public function __construct(EntityManagerInterface $em, \Swift_Mailer $mailer)
     {
         $this->em = $em;
         $this->mailer = $mailer;
