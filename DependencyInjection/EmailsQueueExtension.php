@@ -1,6 +1,6 @@
 <?php
 
-namespace JulienIts\EmailsQueueBundle\Controller\DependencyInjection;
+namespace JulienIts\EmailsQueueBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
@@ -12,7 +12,6 @@ class EmailsQueueExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
-        die('load');
         $loader = new YamlFileLoader(
             $container,
             new FileLocator(__DIR__.'/../Resources/config')
