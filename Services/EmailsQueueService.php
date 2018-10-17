@@ -30,7 +30,7 @@ class EmailsQueueService
     
     private function _sendEmailQueue(EmailQueue $emailQueue)
     {
-		$message = \Swift_Message::newInstance();
+        $message = new Swift_Message();
 		 
         $to = $emailQueue->getEmailTo();
         
