@@ -1,0 +1,8 @@
+services:
+
+    JulienIts\EmailsQueueBundle\Services\EmailService:
+        public: true
+
+    JulienIts\EmailsQueueBundle\Services\EmailsQueueService:
+        public: true
+
