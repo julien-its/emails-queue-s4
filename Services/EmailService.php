@@ -4,6 +4,7 @@ namespace JulienIts\EmailsQueueBundle\Services;
 
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Routing\RouterInterface;
 
 class EmailService
 {
@@ -16,7 +17,7 @@ class EmailService
 
     public function __construct(
         EntityManagerInterface $em,
-		\Symfony\Bundle\FrameworkBundle\Routing\Router $router,
+        RouterInterface $router,
 		\Twig_Environment $twig,
 		TokenStorage $tokenStorage,
         EmailsQueueService $emailsQueueService
