@@ -7,3 +7,9 @@ services:
     JulienIts\EmailsQueueBundle\Services\EmailsQueueService:
         autowire: true
         public: true
+
+    JulienIts\EmailsQueueBundle\Command\EmailsCommand:
+        autowire: true
+        public: true
+        tags:
+            - { name: 'console.command', command: 'jits:queue:process' }
