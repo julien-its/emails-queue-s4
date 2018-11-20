@@ -37,6 +37,13 @@ class EmailSent
      */
     private $emailFrom;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="emailFromName", type="string", length=150)
+     */
+    private $emailFromName;
+
 	/**
      * @var string
      *
@@ -166,6 +173,30 @@ class EmailSent
     public function getEmailFrom()
     {
         return $this->emailFrom;
+    }
+
+    /**
+     * Set emailFromName
+     *
+     * @param string $emailFromName
+     *
+     * @return EmailSent
+     */
+    public function setEmailFromName($emailFromName)
+    {
+        $this->emailFromName = $emailFromName;
+
+        return $this;
+    }
+
+    /**
+     * Get emailFromName
+     *
+     * @return string
+     */
+    public function getEmailFromName()
+    {
+        return $this->emailFromName;
     }
 
     /**

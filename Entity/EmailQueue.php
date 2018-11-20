@@ -40,9 +40,16 @@ class EmailQueue
     /**
      * @var string
      *
-     * @ORM\Column(name="emailFrom", type="string", length=150)
+     * @ORM\Column(name="emailFrom", type="string", length=50)
      */
     private $emailFrom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="emailFromName", type="string", length=50)
+     */
+    private $emailFromName;
 
 	/**
      * @var string
@@ -178,6 +185,31 @@ class EmailQueue
     }
 
     /**
+     * Set emailFromName
+     *
+     * @param string $emailFromName
+     *
+     * @return EmailQueue
+     */
+    public function setEmailFromName($emailFromName)
+    {
+        $this->emailFromName = $emailFromName;
+
+        return $this;
+    }
+
+
+    /**
+     * Get emailFromName
+     *
+     * @return string
+     */
+    public function getEmailFromName()
+    {
+        return $this->emailFromName;
+    }
+
+    /**
      * Set emailTo
      *
      * @param string $emailTo
@@ -190,6 +222,8 @@ class EmailQueue
 
         return $this;
     }
+
+
 
     /**
      * Get emailTo

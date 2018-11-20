@@ -47,6 +47,7 @@ class EmailService
 		$emailQueue->setBody($emailHtml);
 		$emailQueue->setContext($this->em->getRepository('EmailsQueueBundle:EmailContext')->findOneByName($config['contextName']));
 		$emailQueue->setEmailFrom($config['emailFrom']);
+		$emailQueue->setEmailFromName($config['emailFromName']);
 		$emailQueue->setEmailTo($config['emailTo']);
         if(isset($config['emailsCc'])){
             $emailQueue->setEmailsCc($config['emailsCc']);

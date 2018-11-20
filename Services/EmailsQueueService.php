@@ -40,7 +40,7 @@ class EmailsQueueService
         }
         
         $message->setSubject($emailQueue->getSubject())
-				->setFrom($emailQueue->getEmailFrom())
+				->setFrom([$emailQueue->getEmailFrom() => $emailQueue->getEmailFromName()])
 				->setTo($to)
 				->setBody($emailQueue->getBody(),'text/html');
         
@@ -94,6 +94,7 @@ class EmailsQueueService
         
         $emailSent->setPriority($emailQueue->getPriority());
         $emailSent->setEmailFrom($emailQueue->getEmailFrom());
+        $emailSent->setEmailFromName($emailQueue->getEmailFromName());
         $emailSent->setEmailTo($emailQueue->getEmailTo());
         $emailSent->setSubject($emailQueue->getSubject());
         $emailSent->setBody($emailQueue->getBody());
