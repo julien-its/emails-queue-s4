@@ -48,11 +48,13 @@ $ php bin/console doctrine:migration:migrate
             $config = array(
                 'template' => 'EmailsQueueBundle:mail:contact.html.twig',
                 'templateVars' => array('message' => $message),
+                'emailFrom' => 'from@from.com',
+                'emailFromName' => 'My app',
                 'contextName' => 'contact',
                 'priority' => EmailQueue::HIGH_PRIORITY,
                 'subject' => self::DEFAULT_SUBJECT.' : Contact',
                 'emailTo' => 'toemail@to.com',
-                'mailsCc' => 'contact@julien-gustin.be;email2@email.com'
+                'mailsCc' => 'contact@from.com;email2@email.com'
             );
     		$this->jitsEmailService->createNewAndProcess($config);
     	}
