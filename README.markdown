@@ -31,7 +31,7 @@ $ php bin/console doctrine:migration:migrate
 **Create a new email service** where you will define all your emails methods. We only add one exemple of a contact form email
 
     <?php
-    namespace AppBundle\Services;
+    namespace App\Services;
     use \JulienIts\EmailsQueueBundle\Entity\EmailQueue;
     class EmailService
     {
@@ -54,7 +54,7 @@ $ php bin/console doctrine:migration:migrate
                 'priority' => EmailQueue::HIGH_PRIORITY,
                 'subject' => self::DEFAULT_SUBJECT.' : Contact',
                 'emailTo' => 'toemail@to.com',
-                'mailsCc' => 'contact@from.com;email2@email.com'
+                'emailsBcc' => 'contact@from.com;email2@email.com'
             );
     		$this->jitsEmailService->createNewAndProcess($config);
     	}
